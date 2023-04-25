@@ -7,7 +7,7 @@ interface CardQuestionProps {
 
 export function CardQuestion({ question }: CardQuestionProps) {
   return (
-    <ContainerCardQuestion to={`/question/${question.id}`}>
+    <ContainerCardQuestion to={`/questions/${question.id}`}>
       <img src={question.thumb_url} />
       <WrapperQuestion>
         <p>{question.question} </p>

@@ -18,7 +18,9 @@ export function QuestionPage() {
   const { data, isLoading, error } = useQuestion({ questionId });
   const [choices, setChoices] = useState<ChoiceData[]>();
   const [canVote, setCanVote] = useState(true);
-  const contentUrl = `${import.meta.env.VITE_SHARE_URL}/question/${questionId}`;
+  const contentUrl = `${
+    import.meta.env.VITE_SHARE_URL
+  }/questions/${questionId}`;
 
   useEffect(() => {
     setChoices(data?.question.choices);
