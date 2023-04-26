@@ -34,20 +34,4 @@ export const WidgetRepeatAction = styled("div", {
     fontSize: "$md",
     textAlign: "center",
   },
-
-  button: {
-    backgroundColor: "$green300",
-    color: "$white",
-    width: "$40",
-    height: "$8",
-    border: 0,
-    borderRadius: "8px",
-    fontSize: "$sm",
-    fontWeight: 600,
-    cursor: "pointer",
-
-    "&:hover": {
-      backgroundColor: "$green500",
-    },
-  },
 });

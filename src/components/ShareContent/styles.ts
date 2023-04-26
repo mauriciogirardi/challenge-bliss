@@ -28,22 +28,6 @@ export const Overlay = styled(Dialog.Overlay, {
   animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
 });
 
-export const ButtonOpen = styled("button", {
-  all: "unset",
-  lineHeight: 0,
-  cursor: "pointer",
-
-  svg: {
-    color: "$gray200",
-  },
-
-  "&:hover": {
-    svg: {
-      color: "$green300",
-    },
-  },
-});
-
 export const DialogContent = styled(Dialog.Content, {
   backgroundColor: "$gray700",
   borderRadius: "6px",
@@ -108,25 +92,5 @@ export const Fieldset = styled("fieldset", {
     "&:focus": {
       boxShadow: "0 0 0 1px #00B37E",
     },
-  },
-});
-
-export const ButtonShare = styled("button", {
-  all: "unset",
-  backgroundColor: "$green300",
-  padding: "$1 $3",
-  borderRadius: "8px",
-  color: "$white",
-  fontWeight: 500,
-  cursor: "pointer",
-  transition: "all 0.2s",
-
-  "&:disabled": {
-    cursor: "not-allowed",
-    opacity: 0.5,
-  },
-
-  "&:not(:disabled):hover": {
-    backgroundColor: "$green500",
   },
 });

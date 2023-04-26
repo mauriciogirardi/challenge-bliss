@@ -36,20 +36,8 @@ export const WrapperQuestion = styled("main", {
     padding: "0 $5",
     marginBottom: "$10",
   },
-});
 
-export const ButtonVote = styled("button", {
-  all: "unset",
-  marginTop: "$10",
-  backgroundColor: "$green300",
-  padding: "$1 $3",
-  borderRadius: "8px",
-  color: "$white",
-  fontWeight: 500,
-  cursor: "pointer",
-  transition: "all 0.2s",
-
-  "&:not(:disabled):hover": {
-    backgroundColor: "$green500",
+  "> button": {
+    marginTop: "$10",
   },
 });

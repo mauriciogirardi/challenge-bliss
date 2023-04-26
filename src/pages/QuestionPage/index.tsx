@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ButtonVote, ContainerQuestion, WrapperQuestion } from "./styles";
+import { ContainerQuestion, WrapperQuestion } from "./styles";
 import { LayoutDefault } from "../../layout/LayoutDefault";
 import { useQuestion } from "../../services/hooks/useQuestion";
 import { Choice } from "../../components/Choice";
@@ -10,6 +10,8 @@ import { message } from "../../utils/message";
 import { api } from "../../lib/axios";
 import { QUESTIONS_PATH } from "../../constants/paths";
 import { ChoiceData } from "../../@types/QuestionTypes";
+import { Button } from "../../components/Button";
+import { Article } from "@phosphor-icons/react";
 
 export function QuestionPage() {
   const params = useParams<{ id: string }>();
@@ -87,7 +89,13 @@ export function QuestionPage() {
           </div>
 
           {checkedQuestion && canVote && (
-            <ButtonVote onClick={handleConfirmVote}>Vote</ButtonVote>
+            <Button
+              onClick={handleConfirmVote}
+              icon={Article}
+              isLoading={isLoading}
+            >
+              Vote
+            </Button>
           )}
         </WrapperQuestion>
       </ContainerQuestion>
