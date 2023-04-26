@@ -2,12 +2,13 @@ import { ChangeEvent } from "react";
 import { useStoreActions, useStoreState } from "easy-peasy";
 
 import { Broom } from "@phosphor-icons/react";
-import { ButtonClear, ContainerHeader, Wrapper } from "./styles";
+import { ContainerHeader, Wrapper } from "./styles";
 import { ActionsSearchModel, StateSearchModel } from "../../stores/searchStore";
 import { InputSearch } from "../InputSearch";
 import { queryClient } from "../../lib/queryClient";
 import { Link } from "react-router-dom";
 import { ShareContent } from "../ShareContent";
+import { Button } from "../Button";
 
 interface HeaderProps {
   hiddenSearch?: boolean;
@@ -44,9 +45,7 @@ export function Header({ hiddenSearch, showShare, contentUrl }: HeaderProps) {
       <h3>Bliss</h3>
       <Wrapper>
         {hiddenSearch && searchValue && (
-          <ButtonClear onClick={handleClearText}>
-            <Broom size={24} />
-          </ButtonClear>
+          <Button onClick={handleClearText} placement="icon" icon={Broom} />
         )}
         {hiddenSearch && (
           <InputSearch

@@ -45,17 +45,3 @@ export const Wrapper = styled("div", {
     },
   },
 });
-
-export const ButtonClear = styled("button", {
-  all: "unset",
-  cursor: "pointer",
-  lineHeight: 0,
-
-  svg: {
-    color: "$gray200",
-  },
-
-  "&:hover svg": {
-    color: "$white",
-  },
-});

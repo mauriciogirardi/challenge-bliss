@@ -4,7 +4,7 @@ import { action, Action } from "easy-peasy";
 
 interface AuthModel {
   isAuth: boolean;
-  setIsAuth: Action<AuthModel, string>;
+  setIsAuth: Action<AuthModel, boolean>;
 }
 
 export type StateAuthModel = State<{ storeAuthentication: AuthModel }>;
@@ -14,6 +14,6 @@ export const storeAuthentication: AuthModel = {
   isAuth: false,
 
   setIsAuth: action((state, payload) => {
-    state.isAuth = payload === "OK";
+    state.isAuth = payload;
   }),
 };

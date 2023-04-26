@@ -1,8 +1,6 @@
 import { ShareNetwork, X } from "@phosphor-icons/react";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
-  ButtonOpen,
-  ButtonShare,
   Description,
   DialogContent,
   Fieldset,
@@ -17,6 +15,7 @@ import { SHARE_PATH } from "../../constants/paths";
 import { message } from "../../utils/message";
 import { useStoreState } from "easy-peasy";
 import { StateSearchModel } from "../../stores/searchStore";
+import { Button } from "../Button";
 
 interface ShareContentProps {
   contentUrl?: string;
@@ -31,8 +30,6 @@ export function ShareContent({ contentUrl }: ShareContentProps) {
     (state: StateSearchModel) => state.searchStore.searchValue
   );
   const [email, setEmail] = useState("");
-
-  const disabledShareButton = isLoading;
 
   const handleShare = async () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,9 +72,11 @@ export function ShareContent({ contentUrl }: ShareContentProps) {
   return (
     <Dialog.Root open={open}>
       <Dialog.Trigger asChild>
-        <ButtonOpen onClick={() => setOpen((prevState) => !prevState)}>
-          <ShareNetwork size={24} />
-        </ButtonOpen>
+        <Button
+          onClick={() => setOpen((prevState) => !prevState)}
+          placement="icon"
+          icon={ShareNetwork}
+        />
       </Dialog.Trigger>
 
       <Dialog.Portal>
@@ -108,9 +107,9 @@ export function ShareContent({ contentUrl }: ShareContentProps) {
               justifyContent: "flex-end",
             }}
           >
-            <ButtonShare disabled={disabledShareButton} onClick={handleShare}>
+            <Button onClick={handleShare} isLoading={isLoading}>
               Share
-            </ButtonShare>
+            </Button>
           </div>
 
           <Dialog.Close asChild>
